@@ -267,7 +267,16 @@ public class JSONParser {
 		if(token == null)
 			token = new Yytoken(Yytoken.TYPE_EOF, null);
 	}
-
+	
+	private Map createObjectContainer(ContainerFactory containerFactory){
+		if(containerFactory == null)
+			return new JSONObject();
+		Map m = containerFactory.createObjectContainer();
+		
+		if(m == null)
+			return new JSONObject();
+		return m;
+	}
 	
 	private List createArrayContainer(ContainerFactory containerFactory){
 		if(containerFactory == null)
