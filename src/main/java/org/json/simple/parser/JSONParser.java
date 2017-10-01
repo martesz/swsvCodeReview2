@@ -268,6 +268,7 @@ public class JSONParser {
 			token = new Yytoken(Yytoken.TYPE_EOF, null);
 	}
 	
+	// Actually not unused 
 	private Map createObjectContainer(ContainerFactory containerFactory){
 		if(containerFactory == null)
 			return new JSONObject();
